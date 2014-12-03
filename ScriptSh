@@ -1,0 +1,8 @@
+(find . -type f -name '*f*' ) | while read line; 
+do 
+count=$(cat "$line" | wc -l);  
+    if [ $count -gt 10 ]; 
+      then res=${line/f/g}; 
+      mv "$line" "$res"; 
+    fi
+done
